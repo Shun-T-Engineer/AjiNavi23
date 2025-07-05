@@ -21,7 +21,7 @@
 	<div th:if="${reviewList} != null">
 		<table class="review-list">
 			<tr>
-				<th>ID</th><th>ユーザー</th><th>来店日</th><th>評価</th><th>コメント</th>
+				<th>レビュー</th><th>ID</th><th>ユーザー</th><th>来店日</th><th>評価</th><th>コメント</th>
 			</tr>
 			<tr th:each="review : ${reviewList}">
 				<td th:text="${review.reviewId}"></td>
