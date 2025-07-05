@@ -12,7 +12,7 @@
     <form th:action="@{/edit-review}" method="POST" 
     		th:object="${reviewEditForm}">
 		【ID】<br>
-		<p th;text="*{reviewId}"></p>
+		<p th:text="*{reviewId}"></p>
 		<input type="hidden" th:field="*{reviewId}">
 		<div th:if="${#fields.hasErrors('reviewId')}" th:errors="*{reviewId}" class="error-msg"></div>
 		<br>
@@ -35,7 +35,7 @@
 				<option th:each ="option : ${#numbers.sequence(1,5)}"
 					th:value="${option}"
 					th:text="${option}"
-<!--					th:selected="${option == rating}">-->
+					th:selected="${option == rating}">
 				</option>
 		</select><br>
     	<div th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}" class="error-msg"></div>
