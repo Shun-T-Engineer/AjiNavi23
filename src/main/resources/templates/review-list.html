@@ -24,6 +24,17 @@
 				<th>レビュー</th><th>ID</th><th>ユーザー</th><th>来店日</th><th>評価</th><th>コメント</th>
 			</tr>
 			<tr th:each="review : ${reviewList}">
+				<td>
+					<form th:action="@{/show-edit-form}" method="POST">
+						<input type="hidden" name="reviewId" value="${review.reviewId}">
+						<input type="hidden" name="restaurantName" value="${reviewSearchForm.restaurantName}">
+						<input type="hidden" name="restaurantId" value="{reviewSearchForm.restaurantId}">
+						<input type="hidden" name="visitDate" value="${review.visitDate}">
+						<input type="hidden" name="rating" value="${review.rating}">
+						<input type="hidden" name="comment" value="${review.comment}">
+						<input type="submit" value="編集" class="tbtn">
+					</form>
+				</td>
 				<td th:text="${review.reviewId}"></td>
 				<td th:text="${review.userId}"></td>
 				<td th:text="${review.visitDate}"></td>
